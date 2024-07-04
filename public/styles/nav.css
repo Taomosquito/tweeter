@@ -1,36 +1,27 @@
-nav {
+.navbar {
   height: 120px;
   width: 100vw;
   background-color: #4056A1;
   color:#FFFFFF;
   display:flex;
   justify-content: space-between;
-  font-family: "Bungee", sans-serif;
+  align-items: center;
+  padding: 0 1.5em;
   position: fixed;
   top: 0;
 }
 
-nav span {
-
-  font-weight: 400;
-  padding: 1.5em;
-  flex-direction: row;
-  align-content: center;
+.navbar-logo {
+  font-family: "Bungee", sans-serif;
 }
 
-nav span.rightSide {
-  font-family: "Source Sans 3", Sans-Serif;
+.navbar-menu {
   display: flex;
   flex-direction:column;
-  justify-content: flex-start;
   align-items: center;
 }
 
-#titleWord {
-  padding: 0px;
-  font-weight: 600;
-}
-
-.fa-solid {
+.navbar-menu i {
   color:#FF0000;
+  margin-top: -1em
 }

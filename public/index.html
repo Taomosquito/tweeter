@@ -5,12 +5,26 @@
     <title>Tweeter - Home Page</title>
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-      <!--Treating the above as if  it said normalize.css instead of normalize.min.css-->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--External Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
 
     <!-- App CSS -->
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
@@ -26,24 +40,25 @@
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <nav>
-      <span class="leftSide">tweeter</span>
-      <span class="rightSide">
-          <div><span id="titleWord">Write</span> a new tweet</div>
-          <i class="fa-solid fa-angles-down"></i>
-    </nav>
-    <header>
-      <div>
-        <img src="/images/profile-hex.png">
+    <nav class="navbar">
+      <span class="navbar-logo">tweeter</span>
+      <div class="navbar-menu">
+        <p><b>Write</b> a new tweet</p>
+        <i class="fa-solid fa-angles-down"></i>
       </div>
-      <br>
-      <div>
-        <h2>Your Name</h2>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+      <div class="header-profile">
+        <img src="/images/profile-hex.png" />
+      </div>
+      <div class="header-username">
+        <p><b>Scott</b> Peloquin</p>
       </div>
     </header>
 
     <!-- Page-specific (main) content here -->
-    <main class="container">
-    </main>
+    <main class="container"></main>
   </body>
 </html>
