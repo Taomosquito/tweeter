@@ -18,8 +18,22 @@ body {
   color: #545149;
   background-color: #f4f1ec;
   font-size: 24px;
+  font-family: "Source Sans 3", Sans-Serif;
+  font-weight: 300;
 }
+
+/* prepared this so fonts are easily available for when they are needed
+ * 
+ * p {
+ *  font-family: "Source Sans 3", Sans-Serif;
+ *  font-weight: 600;
+ * }
+ * 
+ * REMOVE THIS COMMENTING OUT WHEN LISTED IN INSTRUCTIONS.
+ */
+
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
+
