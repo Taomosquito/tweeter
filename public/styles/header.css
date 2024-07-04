@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  height: 400px;
   width: 100%;
   flex-direction: column;
   justify-content: center;
@@ -7,6 +8,7 @@
   color: #ffffff;
   background-color: #00ffff;
   background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
+  padding-top: 1em;
 }
 
 .header-username {
