@@ -6,6 +6,8 @@ nav {
   display:flex;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
+  position: fixed;
+  top: 0;
 }
 
 nav span {
