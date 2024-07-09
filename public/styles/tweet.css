@@ -1,27 +1,27 @@
-.tweet article {
+.tweet {
   border-style: solid;
   border-color: #333333;
   border-width: 0.25em;
   padding: 0.5em;
 }
 
-.tweet article header {
+.tweet header {
   display: flex;
   justify-content: space-between;
 }
 
-.tweet article footer {
+.tweet footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.tweet article footer p {
+.tweet footer p {
   padding: 0em;
   margin: 0em;
 }
 
-.tweet article footer .icons i {
+.tweet footer .icons i {
   margin: 0.25em;
   color: #4056a1;
 }
