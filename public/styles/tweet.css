@@ -3,6 +3,7 @@
   border-color: #333333;
   border-width: 0.25em;
   padding: 0.5em;
+  margin: 1em;
 }
 
 .tweet header {
@@ -33,9 +34,12 @@
 
 .tweet footer .icons i:hover {
   color: #ffaa00;
-  box-shadow: #ffaa00;
 }
 
 .greyOut {
-  color: #999999;
+  color: #bbbbbb;
+}
+
+.tweet:hover {
+  box-shadow: 0.25em 0.25em #bbbbbb;
 }
