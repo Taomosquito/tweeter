@@ -1,0 +1,41 @@
+.tweet article {
+  border-style: solid;
+  border-color: #333333;
+  border-width: 0.25em;
+  padding: 0.5em;
+}
+
+.tweet article header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tweet article footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tweet article footer p {
+  padding: 0em;
+  margin: 0em;
+}
+
+.tweet article footer .icons i {
+  margin: 0.25em;
+  color: #4056a1;
+}
+
+.tweet hr {
+  height: 0.25em;
+  background-color: #333333;
+}
+
+.tweet footer .icons i:hover {
+  color: #ffaa00;
+  box-shadow: #ffaa00;
+}
+
+.greyOut {
+  color: #999999;
+}

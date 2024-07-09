@@ -2,7 +2,7 @@ textarea {
   height: 2.5em;
   background: transparent;
   border: none;
-  border-bottom: 5px solid #555555;
+  border-bottom: 0.25em solid #555555;
 }
 
 .new-tweet {
