@@ -43,3 +43,8 @@
 .tweet:hover {
   box-shadow: 0.25em 0.25em #bbbbbb;
 }
+
+.tweet-topLeft {
+  display: flex;
+  justify-content: flex-start;
+}
