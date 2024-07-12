@@ -60,13 +60,30 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(randomObjectArr) {
+    console.log("Random Object Array: ", randomObjectArr);
     for (singleObject of randomObjectArr) {
       let $renderedTweet = createTweetElement(singleObject);
       $tweetsContainer.append($renderedTweet);
     }
   }
 
-  renderTweets(tweetDataObjects);
 
-  // }
-});
+  const $form = $("#tweet-prompt");
+
+  $form.on("submit", function(event) {
+    event.preventDefault();
+    const tweetData = $form.serialize();;
+    $.ajax({
+      method: "POST",
+      url: "/tweets",
+      data: tweetData,
+      success: (response) => {
+        console.log(response)
+        renderTweets(response)
+      }
+    })
+
+  })
+
+  // renderTweets(tweetDataObjects);
+})

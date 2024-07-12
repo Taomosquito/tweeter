@@ -13,7 +13,7 @@ textarea {
   align-items: stretch;
 }
 
-.tweet-prompt {
+#tweet-prompt {
   font-family: inherit;
 }
 
