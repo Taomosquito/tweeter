@@ -58,6 +58,14 @@ $(document).ready(function() {
   $form.on("submit", function(event) {
     event.preventDefault();
     const tweetData = $form.serialize();
+    $tweetText = $('#tweet-text');
+    if ($tweetText.val().length < 1) {
+      return alert('no message exists');
+    }
+    if ($tweetText.val().length > 140) {
+      return alert('exceeds allowed character count');
+    }
+
     $.ajax({
       method: "POST",
       url: "/tweets",
