@@ -35,7 +35,7 @@ $(document).ready(function() {
   }
 
   const renderTweets = function(randomObjectArr) {
-    console.log("Random Object Array: ", randomObjectArr);
+    $tweetsContainer.empty();
     for (singleObject of randomObjectArr) {
       let $renderedTweet = createTweetElement(singleObject);
       $tweetsContainer.prepend($renderedTweet);
@@ -53,12 +53,19 @@ $(document).ready(function() {
     })
   }
 
+
+
+  loadTweets();
+
   const $form = $("#tweet-prompt");
 
   $form.on("submit", function(event) {
     event.preventDefault();
+
     const tweetData = $form.serialize();
+
     $tweetText = $('#tweet-text');
+
     if ($tweetText.val().length < 1) {
       return alert('no message exists');
     }
@@ -71,8 +78,7 @@ $(document).ready(function() {
       url: "/tweets",
       data: tweetData,
       success: (response) => {
-        console.log(response);
-        loadTweets(response);
+        loadTweets();
       }
     })
   })
