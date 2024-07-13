@@ -13,13 +13,12 @@ $(document).ready(function() {
     <article class="tweet">
     <header>
     <div class="tweet-topLeft">
-    <img src="${randomObject.user.avatars}" alt="${randomObject.user.name}'s avatar" />  
-    <p>${randomObject.user.name}</p>
+    <img src="${randomObject.user.avatars}" alt="">  
+    <p>class="user-name"</p>
     </div>
-      <p class="greyOut">${randomObject.user.handle}</p>
+      <p class="greyOut user-handle"></p>
     </header>
-    <section>
-    ${randomObject.content.text}
+    <section class="tweet-content">
     </section>
     <hr />
     <footer>
@@ -30,6 +29,10 @@ $(document).ready(function() {
         <i class="fa-solid fa-heart"></i>
       </footer>
     `);
+
+    $tweet.find(".user-name").text(randomObject.user.name);
+    $tweet.find(".greyOut.user-handle").text(randomObject.user.handle);
+    $tweet.find(".tweet-content").text(randomObject.content.text);
 
     return $tweet;
   }
