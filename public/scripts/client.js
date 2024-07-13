@@ -4,8 +4,12 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+
 $(document).ready(function() {
   const $tweetsContainer = $('#tweets-container');
+
+  let errorMessageG = '';
+  $('#error-message').slideUp().css('display', 'none');
 
   const createTweetElement = function(randomObject) {
     const formattedTime = timeago.format(randomObject.created_at);
@@ -14,7 +18,7 @@ $(document).ready(function() {
     <header>
     <div class="tweet-topLeft">
     <img src="${randomObject.user.avatars}" alt="">  
-    <p>class="user-name"</p>
+    <p class="user-name"></p>
     </div>
       <p class="greyOut user-handle"></p>
     </header>
@@ -56,8 +60,6 @@ $(document).ready(function() {
     })
   }
 
-
-
   loadTweets();
 
   const $form = $("#tweet-prompt");
@@ -70,10 +72,22 @@ $(document).ready(function() {
     $tweetText = $('#tweet-text');
 
     if ($tweetText.val().length < 1) {
-      return alert('no message exists');
+      errorMessageG = 'no message exists';
+    } else if ($tweetText.val().length > 140) {
+      errorMessageG = 'exceeds allowed character count';
+      // this is what I meant by forcing the condition I want
+    } else if ($tweetText.val().length >= 1 && $tweetText.val().length < 140) {
+      errorMessageG = '';
+      $('#error-message').slideUp().css('display', 'none');
     }
-    if ($tweetText.val().length > 140) {
-      return alert('exceeds allowed character count');
+
+
+    if (errorMessageG) {
+      $('#error-message').text(errorMessageG).slideDown().css('display', 'flex');
+      event.preventDefault();
+    } else {
+      $('#error-message').slideUp().css('display', 'none');
+      console.log('No Error, Form is Valid');
     }
 
     $.ajax({
@@ -85,4 +99,4 @@ $(document).ready(function() {
       }
     })
   })
-})
+});
