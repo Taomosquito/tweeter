@@ -14,3 +14,20 @@
 .header-username {
   font-size: 2em;
 }
+
+.header-profile {
+  padding-top: 40px;
+}
+
+@media (min-width: 1025px) {
+  #layout {
+    display: flex;
+    flex-direction: row;
+  }
+  .header {
+    margin: 5em;
+  }
+  .header-username {
+    font-size: 1em;
+  }
+}

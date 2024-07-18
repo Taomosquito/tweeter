@@ -25,3 +25,10 @@
   color: #ff0000;
   margin-top: -1em;
 }
+
+@media (max-width: 1024px) {
+  .navbar {
+    background-color: #00ffff;
+    background-image: url("https://www.transparenttextures.com/patterns/broken-noise.png");
+  }
+}
