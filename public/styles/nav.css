@@ -1,3 +1,4 @@
+/* Navigation Bar Container Formatting */
 .navbar {
   height: 120px;
   width: 100vw;
@@ -11,21 +12,23 @@
   top: 0;
 }
 
+/* Application Name As Logo Formatting */
 .navbar-logo {
   font-family: "Bungee", Sans-Serif;
 }
 
+/* Navigation Bar Menu Options Formatting */
 .navbar-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-
 .navbar-menu i {
   color: #ff0000;
   margin-top: -1em;
 }
 
+/* Responsive Design for The  Navigation Bar */
 @media (max-width: 1024px) {
   .navbar {
     background-color: #00ffff;

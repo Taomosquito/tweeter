@@ -1,3 +1,4 @@
+/* Header Container Formatting */
 .header {
   display: flex;
   height: 400px;
@@ -11,14 +12,17 @@
   padding-top: 1em;
 }
 
+/* Display Name Formatting */
 .header-username {
   font-size: 2em;
 }
 
+/* Header Image Positioning */
 .header-profile {
   padding-top: 40px;
 }
 
+/* Responsive Design for The Header*/
 @media (min-width: 1025px) {
   #layout {
     display: flex;
