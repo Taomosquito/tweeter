@@ -41,7 +41,7 @@
 }
 
 .tweet:hover {
-  box-shadow: 0.25em 0.25em #bbbbbb;
+  box-shadow: 0.25em 0.25em grey;
 }
 
 .tweet-topLeft {

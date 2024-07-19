@@ -72,31 +72,32 @@ $(document).ready(function() {
     $tweetText = $('#tweet-text');
 
     if ($tweetText.val().length < 1) {
-      errorMessageG = 'no message exists';
+      return errorMessageG = 'no message exists';
     } else if ($tweetText.val().length > 140) {
-      errorMessageG = 'exceeds allowed character count';
-      // this is what I meant by forcing the condition I want
+      return errorMessageG = 'exceeds allowed character count';
     } else if ($tweetText.val().length >= 1 && $tweetText.val().length < 140) {
       errorMessageG = '';
       $('#error-message').slideUp().css('display', 'none');
     }
 
 
-    if (errorMessageG) {
+    if ($tweetText.val().length < 1 && $tweetText.val().length > 140) {
       $('#error-message').text(errorMessageG).slideDown().css('display', 'flex');
-      event.preventDefault();
+
     } else {
       $('#error-message').slideUp().css('display', 'none');
-      console.log('No Error, Form is Valid');
+      $.ajax({
+        method: "POST",
+        url: "/tweets",
+        data: tweetData,
+        success: (response) => {
+          console.log(response);
+          loadTweets();
+          $form[0].reset();
+        }
+      })
     }
 
-    $.ajax({
-      method: "POST",
-      url: "/tweets",
-      data: tweetData,
-      success: (response) => {
-        loadTweets();
-      }
-    })
+
   })
 });
