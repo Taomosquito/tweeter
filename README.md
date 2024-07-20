@@ -18,6 +18,5 @@ This repository is the starter code for the project: Students will fork and clon
 - Node 5.10.x or above
 
 <img title="image1" alt="Alt text" src="/readme_images/1024w_media_1.png">
-<img title="image2" alt="Alt text" src="/readme_images/1025w_media_1.png">
 <img title="image3" alt="Alt text" src="/readme_images/1025w_media_2.png">
 <img title="image4" alt="Alt text" src="/readme_images/1025w_media_3.png">
