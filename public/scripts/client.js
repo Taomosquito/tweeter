@@ -8,9 +8,15 @@
 $(document).ready(function() {
   const $tweetsContainer = $('#tweets-container');
 
+  // defines global error message behaviour hence the G notation at end.
   let errorMessageG = '';
   $('#error-message').slideUp().css('display', 'none');
 
+  /* 
+  Implements a function:
+   * This function will primarily be called when rendering tweets
+   * This function has the purpose of creating the new tweet HTML using jQuery
+  */
   const createTweetElement = function(randomObject) {
     const formattedTime = timeago.format(randomObject.created_at);
     let $tweet = $(`
@@ -33,7 +39,7 @@ $(document).ready(function() {
         <i class="fa-solid fa-heart"></i>
       </footer>
     `);
-
+    // These are to prevent XSS
     $tweet.find(".user-name").text(randomObject.user.name);
     $tweet.find(".greyOut.user-handle").text(randomObject.user.handle);
     $tweet.find(".tweet-content").text(randomObject.content.text);
@@ -41,6 +47,11 @@ $(document).ready(function() {
     return $tweet;
   }
 
+  /*
+  Implements a function:
+    * This function will be used to reset container status.
+    * This function will be used to attach all new tweets to the page.
+  */
   const renderTweets = function(randomObjectArr) {
     $tweetsContainer.empty();
     for (singleObject of randomObjectArr) {
@@ -49,6 +60,7 @@ $(document).ready(function() {
     }
   }
 
+  // performs get request logic to facilitate the use of all the above logic.
   const loadTweets = function() {
     $.ajax({
       method: "GET",
@@ -60,17 +72,25 @@ $(document).ready(function() {
     })
   }
 
+  // Starts by generating all new content using the above get request.
   loadTweets();
 
+  // Generates the form access jQuery object
   const $form = $("#tweet-prompt");
 
+  /*
+  This is the primary event handler:
+    * It Triggers On Tweet Button
+    * This handles error and success logic for the Tweet Button
+  */
   $form.on("submit", function(event) {
+    // Prevents traditional behavior so it can behave as SPA
     event.preventDefault();
-
+    // Makes form object more accessible
     const tweetData = $form.serialize();
-
+    // Eases access to heavily utilized field
     $tweetText = $('#tweet-text');
-
+    // Error Handling Logic
     if ($tweetText.val().length < 1) {
       errorMessageG = 'no message exists';
     } else if ($tweetText.val().length > 140) {
@@ -80,7 +100,7 @@ $(document).ready(function() {
       $('#error-message').slideUp().css('display', 'none');
     }
 
-
+    // Submit Access Logic
     if ($tweetText.val().length < 1 || $tweetText.val().length > 140) {
       $('#error-message').text(errorMessageG).slideDown().css('display', 'flex');
 
@@ -94,11 +114,11 @@ $(document).ready(function() {
           console.log(response);
           loadTweets();
           $form[0].reset();
-          $('#error-message').slideUp().css('display', 'none'); // Ensure error message is hidden after successful submission
+          $('#error-message').slideUp().css('display', 'none'); // contingent error logic.
         },
         error: (textStatus, errorThrown) => {
           console.error("Error submitting tweet:", textStatus, errorThrown);
-          $('#error-message').text("An error occurred. Please try again later.").slideDown().css('display', 'flex');
+          $('#error-message').text("An error occurred. Please try again later.").slideDown().css('display', 'flex'); // contingent error logic.
         }
       })
     }
