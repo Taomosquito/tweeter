@@ -72,16 +72,16 @@ $(document).ready(function() {
     $tweetText = $('#tweet-text');
 
     if ($tweetText.val().length < 1) {
-      return errorMessageG = 'no message exists';
+      errorMessageG = 'no message exists';
     } else if ($tweetText.val().length > 140) {
-      return errorMessageG = 'exceeds allowed character count';
+      errorMessageG = 'exceeds allowed character count';
     } else if ($tweetText.val().length >= 1 && $tweetText.val().length < 140) {
       errorMessageG = '';
       $('#error-message').slideUp().css('display', 'none');
     }
 
 
-    if ($tweetText.val().length < 1 && $tweetText.val().length > 140) {
+    if ($tweetText.val().length < 1 || $tweetText.val().length > 140) {
       $('#error-message').text(errorMessageG).slideDown().css('display', 'flex');
 
     } else {
@@ -94,6 +94,11 @@ $(document).ready(function() {
           console.log(response);
           loadTweets();
           $form[0].reset();
+          $('#error-message').slideUp().css('display', 'none'); // Ensure error message is hidden after successful submission
+        },
+        error: (textStatus, errorThrown) => {
+          console.error("Error submitting tweet:", textStatus, errorThrown);
+          $('#error-message').text("An error occurred. Please try again later.").slideDown().css('display', 'flex');
         }
       })
     }
