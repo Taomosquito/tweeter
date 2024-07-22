@@ -1,5 +1,4 @@
 $(document).ready(function() {
-  // --- our code goes here ---
   $("#tweet-text").on("input", function(event) {
     const tweetLength = $(this).val().length;
     const tweetLengthRemaining = 140 - tweetLength;

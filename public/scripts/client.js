@@ -86,6 +86,7 @@ $(document).ready(function() {
   $form.on("submit", function(event) {
     // Prevents traditional behavior so it can behave as SPA
     event.preventDefault();
+    $(".counter").html(`140`);
     // Makes form object more accessible
     const tweetData = $form.serialize();
     // Eases access to heavily utilized field
