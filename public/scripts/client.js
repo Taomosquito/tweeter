@@ -86,7 +86,7 @@ $(document).ready(function() {
   $form.on("submit", function(event) {
     // Prevents traditional behavior so it can behave as SPA
     event.preventDefault();
-    $(".counter").html(`140`);
+
     // Makes form object more accessible
     const tweetData = $form.serialize();
     // Eases access to heavily utilized field
@@ -114,6 +114,7 @@ $(document).ready(function() {
         success: (response) => {
           console.log(response);
           loadTweets();
+          $(".counter").html(`140`);
           $form[0].reset();
           $('#error-message').slideUp().css('display', 'none'); // contingent error logic.
         },
